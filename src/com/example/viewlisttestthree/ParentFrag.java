@@ -18,17 +18,16 @@ public class ParentFrag extends Fragment {
         if (shouldCreateChild) {
             FragmentTransaction ftrans = getFragmentManager().beginTransaction();
 
-            ParentFrag ChildFrag = new ParentFrag();
+            ChildFrag sampleChildFrag = new ChildFrag();
             Bundle arguments = new Bundle();
             arguments.putBoolean("CreateAChildFrag", false);
-            ChildFrag.setArguments(arguments);
+            sampleChildFrag.setArguments(arguments);
             
-            ftrans.add(R.id.inside_frag , ChildFrag );
+            ftrans.add(R.id.inside_frag , sampleChildFrag );
             ftrans.commit();
         }
     	
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.parent_container, container, false);
     }
-
 }
